@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "67ae4aaf243cd301514d7944"
+  },
+  "title": "1984",
+  "author": "George Orwell",
+  "publishedYear": 1949,
+  "genre": "Dystopian",
+  "ISBN": "978-0451524935",
+  "rating": 4.5
+},
+{
+  "_id": {
+    "$oid": "67ae4da9243cd301514d7947"
+  },
+  "title": "To Kill a Mockingbird",
+  "author": "Harper Lee",
+  "publishedYear": 1980,
+  "genre": "Fiction",
+  "ISBN": "978-0061120084",
+  "rating": 4.5
+}]

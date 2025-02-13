@@ -1,0 +1,58 @@
+// Database and Collection Creation
+use library
+db.createCollection("books")
+
+// Insert Data
+db.books.insertMany([
+  {
+    "title": "The Pragmatic Programmer",
+    "author": "Andrew Hunt, David Thomas",
+    "publishedYear": 1999,
+    "genre": "Technology",
+    "ISBN": "978-0201616224"
+  },
+  {
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "publishedYear": 2008,
+    "genre": "Technology",
+    "ISBN": "978-0132350884"
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "publishedYear": 1949,
+    "genre": "Dystopian",
+    "ISBN": "978-0451524935"
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "publishedYear": 1960,
+    "genre": "Fiction",
+    "ISBN": "978-0061120084"
+  },
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "publishedYear": 1925,
+    "genre": "Classic",
+    "ISBN": "978-0743273565"
+  }
+])
+
+// Retrieve Data
+db.books.find() // Retrieve all books
+db.books.find( { author: "Robert C. Martin" } ) // Retrieve bookbased on the author
+db.books.find({ publishedYear : { $gt : 2000 } } ) // Retrieve books published after 2000
+
+// Update Data
+db.books.updateOne( {"title" : "To Kill a Mockingbird" }, { $set : { "publishedYear" : 1980} } )
+db.books.updateMany( {}, { $set : { "rating" : 4.5 } } )
+
+// Delete Data
+db.books.deleteOne( { ISBN : "978-0743273565" } ) // Delete a book by its ISBN
+db.books.deleteMany( { genre : "Technology"} ) // Delete a book by its genre
+
+// Data Modeling Exercise
+
