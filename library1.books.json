@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "67ae4aaf243cd301514d7944"
+  },
+  "title": "1984",
+  "author": "George Orwell",
+  "publishedYear": 1949,
+  "genre": "Dystopian",
+  "ISBN": "978-0451524935",
+  "rating": 4.5
+},
+{
+  "_id": {
+    "$oid": "67ae4da9243cd301514d7947"
+  },
+  "title": "To Kill a Mockingbird",
+  "author": "Harper Lee",
+  "publishedYear": 1980,
+  "genre": "Fiction",
+  "ISBN": "978-0061120084",
+  "rating": 4.5
+},
+{
+  "_id": {
+    "$oid": "67ae5cf594d8f025a5568391"
+  },
+  "title": "The Pragmatic Programmer",
+  "author": "Andrew Hunt, David Thomas",
+  "publishedYear": 1999,
+  "genre": "Technology",
+  "ISBN": "978-0201616224"
+},
+{
+  "_id": {
+    "$oid": "67ae5d0d94d8f025a5568393"
+  },
+  "title": "Clean Code",
+  "author": "Robert C. Martin",
+  "publishedYear": 2008,
+  "genre": "Technology",
+  "ISBN": "978-0132350884"
+},
+{
+  "_id": {
+    "$oid": "67ae5d2594d8f025a5568395"
+  },
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "publishedYear": 1925,
+  "genre": "Classic",
+  "ISBN": "978-0743273565"
+}]

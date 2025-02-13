@@ -55,4 +55,34 @@ db.books.deleteOne( { ISBN : "978-0743273565" } ) // Delete a book by its ISBN
 db.books.deleteMany( { genre : "Technology"} ) // Delete a book by its genre
 
 // Data Modeling Exercise
+models.js
+
+// Aggregation Pipeline
+db.books.aggregate([
+  {
+    $group: {
+      _id: "$genre",
+      totalBooks: { $sum: 1 }
+    }
+  }
+]) // Finding total number of books in a genre
+
+db.books.aggregate([
+  {
+    $group: {
+      _id: null,
+      avgPublishedYear: { $avg: "$publishedYear" }
+    }
+  }
+]) // Calculating the average
+
+db.books.aggregate([
+  {
+    $sort: { rating: -1 }
+  },
+  {
+    $limit: 1
+  }
+]) // Looking for top-rated book
+
 
