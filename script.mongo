@@ -85,4 +85,13 @@ db.books.aggregate([
   }
 ]) // Looking for top-rated book
 
+// Indexing
+db.books.createIndex( { "author" : 1 } )
 
+/* Indexing has the following benefits!
+    1. Faster query performance
+    2. Enhances efficient sorting
+    3. Reduced resource usage
+    4. Supports unique constraints
+    
+ */

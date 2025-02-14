@@ -1,84 +1,121 @@
-**Week 1: MongoDB Fundamentals Assignment**
+# MongoDB Setup and Usage Guide
 
-**Objective:**
+MongoDB is a NoSQL database known for its scalability, flexibility, and document-oriented structure. It stores data in JSON-like BSON format and is widely used in modern web applications.
 
-- Apply MongoDB concepts learned throughout the week.
-- Practice working with databases, collections, and documents.
-- Develop skills in CRUD operations and data modeling.
+---
 
-**Instructions:**
+## 📌 Step 1: Install MongoDB on Windows
 
-1. **Setup MongoDB:**
-
-   - Install MongoDB locally or create a free cluster on MongoDB Atlas.
-   - Start the MongoDB server locally or connect to the MongoDB Atlas cluster.
-   - Verify the installation and connection by running:
-     ```sh
-     mongo --version
+### 🔹 Windows Installation:
+1. Download MongoDB Community Server from the [MongoDB Download Center](https://www.mongodb.com/try/download/community).
+2. Run the installer and select **Complete Setup**.
+3. Ensure you check **"Install MongoDB as a service"** for automatic startup.
+4. Add MongoDB binaries to the system `PATH`:
+   - Open **System Properties** → **Advanced** → **Environment Variables**.
+   - Under **System Variables**, edit the `Path` variable and add:
      ```
+     C:\Program Files\MongoDB\Server\<version>\bin
+     ```
+5. Verify installation by running:
+   ```sh
+   mongod --version
+   ```
 
-2. **Database and Collection Creation:**
+---
 
-   - Create a new database called `library`.
-   - Inside `library`, create a collection named `books`.
+## 📌 Step 2: Install MongoDB Shell (mongosh)
+`mongosh` is the interactive command-line shell for MongoDB.
 
-3. **Insert Data:**
+### 🔹 Installation:
+- Download `mongosh` from the [MongoDB Download Center](https://www.mongodb.com/try/download/shell).
+- Install and verify using:
+  ```sh
+  mongosh --version
+  ```
 
-   - Insert at least five book records into the `books` collection.
-   - Each book should contain fields such as `title`, `author`, `publishedYear`, `genre`, and `ISBN`.
+---
 
-4. **Retrieve Data:**
+## 📌 Step 3: Start and Connect to MongoDB
+### 🔹 Start MongoDB Server:
+1. Open Command Prompt and start the MongoDB server:
+   ```sh
+   mongod
+   ```
 
-   - Retrieve all books from the collection.
-   - Query books based on a specific author.
-   - Find books published after the year 2000.
+### 🔹 Connect to MongoDB:
+2. In another terminal, connect to the database:
+   ```sh
+   mongosh
+   ```
 
-5. **Update Data:**
+---
 
-   - Update the `publishedYear` of a specific book.
-   - Add a new field called `rating` to all books and set a default value.
+## 📌 Step 4: Insert and Query Data
+### 🔹 Insert Data into a Collection:
+```sh
+use myDatabase
 
-6. **Delete Data:**
+db.books.insertMany([
+  {
+    "title": "The Pragmatic Programmer",
+    "author": "Andrew Hunt, David Thomas",
+    "publishedYear": 1999,
+    "genre": "Technology",
+    "ISBN": "978-0201616224"
+  },
+  {
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "publishedYear": 2008,
+    "genre": "Technology",
+    "ISBN": "978-0132350884"
+  }
+])
+```
 
-   - Delete a book by its `ISBN`.
-   - Remove all books of a particular genre.
+### 🔹 Query Data:
+```sh
+db.books.find().pretty()
+```
 
-7. **Data Modeling Exercise:**
+---
 
-   - Create a data model for an e-commerce platform including collections for `users`, `orders`, and `products`.
-   - Decide on appropriate fields and relationships (embedding vs. referencing).
-   - Implement the structure using MongoDB.
+## 📌 Step 5: Stop MongoDB
+- Stop the MongoDB service:
+  ```sh
+  net stop MongoDB
+  ```
 
-8. **Aggregation Pipeline:**
+---
 
-   - Use aggregation to find the total number of books per genre.
-   - Calculate the average published year of all books.
-   - Identify the top-rated book.
+## 🎯 Conclusion
+You have successfully installed, set up, and used MongoDB on Windows! 🎉 Happy coding!
 
-9. **Indexing:**
+---
 
-   - Create an index on the `author` field to optimize query performance.
-   - Explain the benefits of indexing in MongoDB.
+## 🚀 How to Upload to GitHub
+1. Initialize a new Git repository:
+   ```sh
+   git init
+   ```
+2. Add the README file:
+   ```sh
+   git add README.md
+   ```
+3. Commit the changes:
+   ```sh
+   git commit -m "Added MongoDB setup guide"
+   ```
+4. Add the remote repository:
+   ```sh
+   git remote add origin <your-github-repo-url>
+   ```
+5. Push to GitHub:
+   ```sh
+   git push -u origin main
+   ```
 
-10. **Testing:**
+---
 
-   - Use the MongoDB shell or Compass to verify the inserted and updated records.
-   - Ensure all queries return the expected results.
-
-11. **Documentation:**
-
-   - Create a `README.md` file with step-by-step instructions on setting up and running your database.
-
-12. **Submission:**
-
-   - Push your code and scripts to your GitHub repository.
-
-**Evaluation Criteria:**
-
-- Proper setup and connection of MongoDB.
-- Accurate implementation of CRUD operations.
-- Correct data modeling with appropriate relationships.
-- Use of aggregation for insightful queries.
-- Clear and concise documentation.
-- Proper indexing implementation.
+✅ Now your MongoDB setup guide is ready for GitHub! 🚀
 
