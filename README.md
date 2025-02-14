@@ -86,36 +86,3 @@ db.books.find().pretty()
   net stop MongoDB
   ```
 
----
-
-## 🎯 Conclusion
-You have successfully installed, set up, and used MongoDB on Windows! 🎉 Happy coding!
-
----
-
-## 🚀 How to Upload to GitHub
-1. Initialize a new Git repository:
-   ```sh
-   git init
-   ```
-2. Add the README file:
-   ```sh
-   git add README.md
-   ```
-3. Commit the changes:
-   ```sh
-   git commit -m "Added MongoDB setup guide"
-   ```
-4. Add the remote repository:
-   ```sh
-   git remote add origin <your-github-repo-url>
-   ```
-5. Push to GitHub:
-   ```sh
-   git push -u origin main
-   ```
-
----
-
-✅ Now your MongoDB setup guide is ready for GitHub! 🚀
-
